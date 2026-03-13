@@ -1212,7 +1212,7 @@ begin
     Anchors := [anLeft,anRight,anTop,anBottom];
     Focusable := False;
     ShowHint := True;
-    Width := self.Width - round(204*ratio);
+    Width := Width - round(204*ratio);
     OnResize := @PaletteBarResized;
   end;
 
@@ -1305,7 +1305,6 @@ begin
     windowType := wtpopup;
      btnToFront.tag := 1;
   end;
-
 
   MainMenu.AddMenuItem('&File', nil).SubMenu := filemenu;
   MainMenu.AddMenuItem('&Undo', nil).SubMenu := undomenu;
@@ -1525,6 +1524,7 @@ if  (gINI.ReadBool('Options', 'RunOnlyOnce', true) = false) then
   fpgApplication.CreateForm(Tfrm_multiselect, frmMultiSelect);
   chlPalette.Tag:=0;
   
+   Sizeable := FALSE;
  end;
 
 procedure TfrmMainDesigner.ToggleDesignerGrid(Sender: TObject);
